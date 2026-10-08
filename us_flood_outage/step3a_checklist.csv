@@ -1,0 +1,9 @@
+Indicator,Value,Threshold,Verdict
+Rows with all hazard features (%),100.0,≥ 99,pass
+Rows with all county features (%),100.0,≥ 98,pass
+Counties with outages over 24 hours that are exposed (%),99.5,≥ 80,pass
+Share of long outages rises with the wind radius,1% < 23% < 74% < 92%,rising at every step,pass
+Spearman correlation of gust and outage duration among exposed counties,0.72,≥ 0.3,pass
+Rows with satellite embeddings (%),100.0,≥ 99,pass
+Correlation (absolute) of an embedding component with forest share,0.8,≥ 0.5,pass
+Spearman correlation of outage duration between the two sets of customer totals,0.98,≥ 0.9,pass

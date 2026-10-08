@@ -1,0 +1,12 @@
+Part,Indicator,Value,Threshold,Verdict
+Quality,"Wind-only model, mean Spearman",0.73,≥ 0.60,pass
+Quality,Mean Spearman of the reference model minus that of ranking by gust alone,0.061,> 0,pass
+Quality,AUC of the reference model for exceeding 24 hours (mean of 9),0.93,≥ 0.80,pass
+Quality,Change in mean Spearman with the second denominator (absolute),0.001,≤ 0.05,pass
+Quality,Mean Spearman of the reference model under the strict evaluation,0.75,≥ 0.50,pass
+Quality,Spearman correlation of the reference model's prediction and night-light dimming,0.35,≥ 0.20,pass
+H1,rain: wind → wind_rain,"+0.012, 7 / 9","≥ 0.02, 6+ / 9",no improvement
+H2,place: wind_rain → wind_rain_place,"+0.033, 9 / 9","≥ 0.02, 6+ / 9",improvement
+H3,flood: wind_rain_place → wind_rain_place_flood,"+0.004, 5 / 9","≥ 0.02, 6+ / 9",no improvement
+H4,embeddings on top: wind_rain_place_flood → wind_rain_place_flood_emb,"+0.009, 7 / 9","≥ 0.02, 6+ / 9",no improvement
+H5,embeddings instead of place: wind_rain_place → wind_rain_emb,"+0.010, 5 / 9",≥ -0.02,can replace

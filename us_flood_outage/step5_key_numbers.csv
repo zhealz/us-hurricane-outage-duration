@@ -1,0 +1,202 @@
+key,value,source,note
+county_events,1767,step4_predictions.csv,exposed county-events with EAGLE-I records
+counties,617,step4_predictions.csv,
+hurricanes,9,step4_predictions.csv,
+states,8,step4_predictions.csv,
+over_24h,620,step4_predictions.csv,county-events with 24+ hours at 10%+ out
+over_72h,358,step4_predictions.csv,
+never_reached_10pct,756,step4_predictions.csv,
+never_reached_10pct_share,42.8,step4_predictions.csv,percent of county-events
+gust_alone_mean_spearman,0.714,step4_spearman_by_event.csv,"no model, counties ranked by gust"
+mean_spearman.wind,0.729,step4_metrics_summary.csv,"leave-one-hurricane-out, mean of 9"
+min_max_spearman.wind,0.61 to 0.83,step4_spearman_by_event.csv,range over the 9 held-out hurricanes
+strict_mean_spearman.wind,0.711,step4_strict_evaluation.csv,training also leaves out the test hurricane's counties
+ridge_mean_spearman.wind,0.757,step4_metrics_summary.csv,linear baseline
+mean_spearman.wind_rain,0.741,step4_metrics_summary.csv,"leave-one-hurricane-out, mean of 9"
+min_max_spearman.wind_rain,0.61 to 0.86,step4_spearman_by_event.csv,range over the 9 held-out hurricanes
+strict_mean_spearman.wind_rain,0.732,step4_strict_evaluation.csv,training also leaves out the test hurricane's counties
+ridge_mean_spearman.wind_rain,0.766,step4_metrics_summary.csv,linear baseline
+mean_spearman.wind_rain_place,0.774,step4_metrics_summary.csv,"leave-one-hurricane-out, mean of 9"
+min_max_spearman.wind_rain_place,0.65 to 0.89,step4_spearman_by_event.csv,range over the 9 held-out hurricanes
+strict_mean_spearman.wind_rain_place,0.748,step4_strict_evaluation.csv,training also leaves out the test hurricane's counties
+ridge_mean_spearman.wind_rain_place,0.769,step4_metrics_summary.csv,linear baseline
+mean_spearman.wind_rain_place_flood,0.779,step4_metrics_summary.csv,"leave-one-hurricane-out, mean of 9"
+min_max_spearman.wind_rain_place_flood,0.69 to 0.86,step4_spearman_by_event.csv,range over the 9 held-out hurricanes
+strict_mean_spearman.wind_rain_place_flood,0.755,step4_strict_evaluation.csv,training also leaves out the test hurricane's counties
+ridge_mean_spearman.wind_rain_place_flood,0.773,step4_metrics_summary.csv,linear baseline
+mean_spearman.wind_rain_place_flood_emb,0.787,step4_metrics_summary.csv,"leave-one-hurricane-out, mean of 9"
+min_max_spearman.wind_rain_place_flood_emb,0.70 to 0.87,step4_spearman_by_event.csv,range over the 9 held-out hurricanes
+strict_mean_spearman.wind_rain_place_flood_emb,0.744,step4_strict_evaluation.csv,training also leaves out the test hurricane's counties
+ridge_mean_spearman.wind_rain_place_flood_emb,0.765,step4_metrics_summary.csv,linear baseline
+mean_spearman.wind_rain_emb,0.784,step4_metrics_summary.csv,"leave-one-hurricane-out, mean of 9"
+min_max_spearman.wind_rain_emb,0.69 to 0.88,step4_spearman_by_event.csv,range over the 9 held-out hurricanes
+strict_mean_spearman.wind_rain_emb,0.754,step4_strict_evaluation.csv,training also leaves out the test hurricane's counties
+ridge_mean_spearman.wind_rain_emb,0.769,step4_metrics_summary.csv,linear baseline
+mean_auc_24.reference,0.931,step4_metrics_summary.csv,"classifier for 24+ hours, mean of 9"
+pooled_r2_log.wind,0.49,step4_metrics_summary.csv,"all hurricanes pooled, log(1 + hours): depends on storm-level severity too"
+pooled_r2_log.wind_rain_place,0.598,step4_metrics_summary.csv,"all hurricanes pooled, log(1 + hours): depends on storm-level severity too"
+pooled_r2_log.wind_rain_place_flood_emb,0.612,step4_metrics_summary.csv,"all hurricanes pooled, log(1 + hours): depends on storm-level severity too"
+H1.gain,0.012,step4_feature_set_comparison.csv,wind -> wind_rain
+H1.hurricanes_better,7 of 9,step4_feature_set_comparison.csv,
+H1.gain_ridge,0.009,step4_feature_set_comparison.csv,the same comparison with the linear model
+H1.verdict,no improvement,step4_feature_set_comparison.csv,rule fixed in advance: gain of 0.02 in at least 6 of 9 (H5: no more than 0.02 lower)
+H2.gain,0.033,step4_feature_set_comparison.csv,wind_rain -> wind_rain_place
+H2.hurricanes_better,9 of 9,step4_feature_set_comparison.csv,
+H2.gain_ridge,0.004,step4_feature_set_comparison.csv,the same comparison with the linear model
+H2.verdict,improvement,step4_feature_set_comparison.csv,rule fixed in advance: gain of 0.02 in at least 6 of 9 (H5: no more than 0.02 lower)
+H3.gain,0.004,step4_feature_set_comparison.csv,wind_rain_place -> wind_rain_place_flood
+H3.hurricanes_better,5 of 9,step4_feature_set_comparison.csv,
+H3.gain_ridge,0.003,step4_feature_set_comparison.csv,the same comparison with the linear model
+H3.verdict,no improvement,step4_feature_set_comparison.csv,rule fixed in advance: gain of 0.02 in at least 6 of 9 (H5: no more than 0.02 lower)
+H4.gain,0.009,step4_feature_set_comparison.csv,wind_rain_place_flood -> wind_rain_place_flood_emb
+H4.hurricanes_better,7 of 9,step4_feature_set_comparison.csv,
+H4.gain_ridge,-0.008,step4_feature_set_comparison.csv,the same comparison with the linear model
+H4.verdict,no improvement,step4_feature_set_comparison.csv,rule fixed in advance: gain of 0.02 in at least 6 of 9 (H5: no more than 0.02 lower)
+H5.gain,0.01,step4_feature_set_comparison.csv,wind_rain_place -> wind_rain_emb
+H5.hurricanes_better,5 of 9,step4_feature_set_comparison.csv,
+H5.gain_ridge,-0.0,step4_feature_set_comparison.csv,the same comparison with the linear model
+H5.verdict,can replace,step4_feature_set_comparison.csv,rule fixed in advance: gain of 0.02 in at least 6 of 9 (H5: no more than 0.02 lower)
+H1.standard.gain,0.012,step5_comparisons.csv,"rain, added to wind"
+H1.standard.hurricanes_better,7 of 9,step5_comparisons.csv,
+H1.standard.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H1.strict.gain,0.021,step5_comparisons.csv,"rain, added to wind"
+H1.strict.hurricanes_better,8 of 9,step5_comparisons.csv,
+H1.strict.meets_rule,True,step5_comparisons.csv,the Step 4 rule applied unchanged
+H1.standard_ridge.gain,0.009,step5_comparisons.csv,"rain, added to wind"
+H1.standard_ridge.hurricanes_better,6 of 9,step5_comparisons.csv,
+H1.standard_ridge.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H2.standard.gain,0.033,step5_comparisons.csv,"place, added to wind and rain"
+H2.standard.hurricanes_better,9 of 9,step5_comparisons.csv,
+H2.standard.meets_rule,True,step5_comparisons.csv,the Step 4 rule applied unchanged
+H2.strict.gain,0.016,step5_comparisons.csv,"place, added to wind and rain"
+H2.strict.hurricanes_better,7 of 9,step5_comparisons.csv,
+H2.strict.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H2.standard_ridge.gain,0.004,step5_comparisons.csv,"place, added to wind and rain"
+H2.standard_ridge.hurricanes_better,5 of 9,step5_comparisons.csv,
+H2.standard_ridge.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H3.standard.gain,0.004,step5_comparisons.csv,"flood, added to place"
+H3.standard.hurricanes_better,5 of 9,step5_comparisons.csv,
+H3.standard.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H3.strict.gain,0.007,step5_comparisons.csv,"flood, added to place"
+H3.strict.hurricanes_better,6 of 9,step5_comparisons.csv,
+H3.strict.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H3.standard_ridge.gain,0.003,step5_comparisons.csv,"flood, added to place"
+H3.standard_ridge.hurricanes_better,5 of 9,step5_comparisons.csv,
+H3.standard_ridge.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H4.standard.gain,0.009,step5_comparisons.csv,"embeddings, added to everything"
+H4.standard.hurricanes_better,7 of 9,step5_comparisons.csv,
+H4.standard.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H4.strict.gain,-0.011,step5_comparisons.csv,"embeddings, added to everything"
+H4.strict.hurricanes_better,3 of 9,step5_comparisons.csv,
+H4.strict.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H4.standard_ridge.gain,-0.008,step5_comparisons.csv,"embeddings, added to everything"
+H4.standard_ridge.hurricanes_better,1 of 9,step5_comparisons.csv,
+H4.standard_ridge.meets_rule,False,step5_comparisons.csv,the Step 4 rule applied unchanged
+H5.standard.gain,0.01,step5_comparisons.csv,embeddings instead of place
+H5.standard.hurricanes_better,5 of 9,step5_comparisons.csv,
+H5.standard.meets_rule,True,step5_comparisons.csv,the Step 4 rule applied unchanged
+H5.strict.gain,0.006,step5_comparisons.csv,embeddings instead of place
+H5.strict.hurricanes_better,7 of 9,step5_comparisons.csv,
+H5.strict.meets_rule,True,step5_comparisons.csv,the Step 4 rule applied unchanged
+H5.standard_ridge.gain,-0.0,step5_comparisons.csv,embeddings instead of place
+H5.standard_ridge.hurricanes_better,4 of 9,step5_comparisons.csv,
+H5.standard_ridge.meets_rule,True,step5_comparisons.csv,the Step 4 rule applied unchanged
+train_rows.standard.median,1638,step4_predictions.csv,"county-events the model trains on, median of 9"
+train_rows.strict.median,1164,step4_predictions.csv,
+train_rows.strict.min,393 (Helene 2024),step4_predictions.csv,
+versions.largest_gain_difference,0.0059,step5_version_check.csv,"tree models, standard and strict tests, two scikit-learn versions"
+versions.largest_count_difference,2,step5_version_check.csv,hurricanes that improve
+versions.ridge_gain_difference,0.0,step5_version_check.csv,
+versions.H1.strict.gain_in_each_version,0.021 and 0.016,step5_version_check.csv,the rule gives a different answer in the two versions
+mean_spearman_raw_64_dimensions.wind_rain_place_flood_emb,0.768,step4_strict_evaluation.csv,embeddings used as 64 raw dimensions instead of 16 components
+mean_spearman_raw_64_dimensions.wind_rain_emb,0.768,step4_strict_evaluation.csv,embeddings used as 64 raw dimensions instead of 16 components
+step3b_check_failed.row_3,0.3 (threshold ≥ 0.4),step3b_checklist.csv,"Spearman correlation of nightly night lights and share with power, affected counties"
+step3b_check_failed.row_10,0.01 (threshold ≥ 0.2),step3b_checklist.csv,"Spearman correlation of flooded share and 3-day rainfall, counties with a timely image"
+flood.rho_flooded_share_rain,0.01,step3a_ and step3b_features_county_event.csv,1083 county-events with a timely radar image
+flood.rho_flooded_share_rain_without_cropland,0.07,step3a_ and step3b_features_county_event.csv,
+reference_model_scored_on_pairs_that_reached_10pct,0.76,step4_predictions.csv,"the reference model, scored only on pairs that reached 10%; robustness.affected_only is a model retrained on those pairs"
+robustness.second_denominator,0.775,step4_robustness.csv,
+robustness.affected_only,0.736,step4_robustness.csv,
+robustness.ridge,0.769,step4_robustness.csv,
+robustness.shuffled_outcome,-0.027,step4_robustness.csv,
+importance.Wind,0.663,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+importance.Satellite embeddings,0.028,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+importance.Rain,0.026,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+importance.Land cover and terrain,0.016,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+importance.People and housing,0.009,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+importance.Low-lying land,0.005,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+importance.Radar flood extent,0.002,step4_importance.csv,"drop in Spearman when the group is shuffled, full model"
+forest.low_third_max_pct,28.8,step3a_features_county_event.csv,forest share at the lower tercile
+forest.high_third_min_pct,50.1,step3a_features_county_event.csv,forest share at the upper tercile
+"forest.Little forest.gust (10.0, 17.5].observed_median_h",0.0,step4_gust_forest.csv,n = 87
+"forest.Little forest.gust (17.5, 20.0].observed_median_h",0.0,step4_gust_forest.csv,n = 108
+"forest.Little forest.gust (20.0, 22.5].observed_median_h",0.0,step4_gust_forest.csv,n = 110
+"forest.Little forest.gust (22.5, 25.0].observed_median_h",6.0,step4_gust_forest.csv,n = 73
+"forest.Little forest.gust (25.0, 27.5].observed_median_h",25.0,step4_gust_forest.csv,n = 64
+"forest.Little forest.gust (27.5, 30.0].observed_median_h",51.8,step4_gust_forest.csv,n = 45
+"forest.Little forest.gust (30.0, 35.0].observed_median_h",137.5,step4_gust_forest.csv,n = 64
+"forest.Little forest.gust (35.0, 50.0].observed_median_h",197.4,step4_gust_forest.csv,n = 38
+"forest.Much forest.gust (10.0, 17.5].observed_median_h",0.0,step4_gust_forest.csv,n = 176
+"forest.Much forest.gust (17.5, 20.0].observed_median_h",1.2,step4_gust_forest.csv,n = 123
+"forest.Much forest.gust (20.0, 22.5].observed_median_h",8.1,step4_gust_forest.csv,n = 112
+"forest.Much forest.gust (22.5, 25.0].observed_median_h",43.4,step4_gust_forest.csv,n = 82
+"forest.Much forest.gust (25.0, 27.5].observed_median_h",59.5,step4_gust_forest.csv,n = 45
+"forest.Much forest.gust (27.5, 30.0].observed_median_h",145.2,step4_gust_forest.csv,n = 33
+"forest.Much forest.gust (30.0, 35.0].observed_median_h",211.5,step4_gust_forest.csv,n = 19
+"forest.Little forest.gust (27.5, 30.0].pairs_by_hurricane","Michael 2018: 8, Laura 2020: 8, Helene 2024: 7, Irma 2017: 6, Florence 2018: 6, Ian 2022: 6, Beryl 2024: 3, Ida 2021: 1",step4_predictions.csv + step3a_features_county_event.csv,45 county-events; the comparison pools hurricanes
+"forest.Much forest.gust (27.5, 30.0].pairs_by_hurricane","Helene 2024: 16, Zeta 2020: 10, Laura 2020: 3, Irma 2017: 2, Ida 2021: 2",step4_predictions.csv + step3a_features_county_event.csv,33 county-events; the comparison pools hurricanes
+ntl.rho_prediction_dimming,0.352,step4_predictions.csv + step3b_features_county_event.csv,1683 county-events with a clear night within 7 days
+ntl.rho_observed_dimming,0.371,step4_predictions.csv + step3b_features_county_event.csv,
+ntl.rho_prediction_dimming.lowest_hurricane,-0.03 (Zeta 2020),step4_predictions.csv + step3b_features_county_event.csv,
+ntl.rho_prediction_dimming.highest_hurricane,0.64 (Laura 2020),step4_predictions.csv + step3b_features_county_event.csv,
+ntl.rho_prediction_dimming.mean_of_hurricanes,0.31,step4_predictions.csv + step3b_features_county_event.csv,
+ntl.lowest_pct_of_normal.predicted_quarter.Shortest quarter,91.5,step4_ntl_check.csv,median
+ntl.lowest_pct_of_normal.predicted_quarter.Second,91.1,step4_ntl_check.csv,median
+ntl.lowest_pct_of_normal.predicted_quarter.Third,89.8,step4_ntl_check.csv,median
+ntl.lowest_pct_of_normal.predicted_quarter.Longest quarter,70.2,step4_ntl_check.csv,median
+ntl.pct_of_normal.customers_with_power.Under 50%,51.2,step3b_ntl_by_power_bin.csv,median over 471 clear county-nights
+ntl.pct_of_normal.customers_with_power.50–80%,86.7,step3b_ntl_by_power_bin.csv,median over 612 clear county-nights
+ntl.pct_of_normal.customers_with_power.80–95%,97.5,step3b_ntl_by_power_bin.csv,median over 659 clear county-nights
+ntl.pct_of_normal.customers_with_power.95–100%,101.9,step3b_ntl_by_power_bin.csv,median over 6117 clear county-nights
+ntl.pct_of_normal.customers_with_power.Not affected,101.6,step3b_ntl_by_power_bin.csv,median over 5864 clear county-nights
+flood.rows_with_timely_radar_pct,61.3,step3b_features_county_event.csv,county-events with a Sentinel-1 image soon enough after landfall
+flood.median_crop_share_pct.range_over_hurricanes,39 to 72,step3b_flood_by_event.csv,"share of the flagged area that is cropland, median county, lowest and highest hurricane"
+map.event,Helene 2024,parameter MAP_EVENT,
+map.counties,354,step4_predictions.csv,
+map.rank_correlation,0.859,step4_spearman_by_event.csv,
+map.same_class_pct,49.2,step4_predictions.csv,predicted and observed in the same duration class
+map.within_one_class_pct,84.5,step4_predictions.csv,
+map.predicted_lower_pct,36.2,step4_predictions.csv,
+map.observed_over_7d,68,step4_predictions.csv,counties with 168+ hours observed
+map.predicted_over_7d,21,step4_predictions.csv,counties with 168+ hours predicted
+map.observed_over_7d.FL.counties,1,step4_predictions.csv,
+map.observed_over_7d.FL.observed_median_h,170.5,step4_predictions.csv,
+map.observed_over_7d.FL.predicted_median_h,192.1,step4_predictions.csv,
+map.observed_over_7d.GA.counties,37,step4_predictions.csv,
+map.observed_over_7d.GA.observed_median_h,233.5,step4_predictions.csv,
+map.observed_over_7d.GA.predicted_median_h,136.7,step4_predictions.csv,
+map.observed_over_7d.NC.counties,15,step4_predictions.csv,
+map.observed_over_7d.NC.observed_median_h,274.8,step4_predictions.csv,
+map.observed_over_7d.NC.predicted_median_h,31.8,step4_predictions.csv,
+map.observed_over_7d.SC.counties,15,step4_predictions.csv,
+map.observed_over_7d.SC.observed_median_h,223.0,step4_predictions.csv,
+map.observed_over_7d.SC.predicted_median_h,68.2,step4_predictions.csv,
+severity.Irma 2017.observed_over24_pct,51.7,step5_severity_by_event.csv,
+severity.Irma 2017.predicted_over24_pct,12.8,step5_severity_by_event.csv,
+severity.Florence 2018.observed_over24_pct,28.0,step5_severity_by_event.csv,
+severity.Florence 2018.predicted_over24_pct,31.4,step5_severity_by_event.csv,
+severity.Michael 2018.observed_over24_pct,28.4,step5_severity_by_event.csv,
+severity.Michael 2018.predicted_over24_pct,19.9,step5_severity_by_event.csv,
+severity.Laura 2020.observed_over24_pct,40.4,step5_severity_by_event.csv,
+severity.Laura 2020.predicted_over24_pct,35.1,step5_severity_by_event.csv,
+severity.Zeta 2020.observed_over24_pct,21.8,step5_severity_by_event.csv,
+severity.Zeta 2020.predicted_over24_pct,22.1,step5_severity_by_event.csv,
+severity.Ida 2021.observed_over24_pct,44.7,step5_severity_by_event.csv,
+severity.Ida 2021.predicted_over24_pct,32.9,step5_severity_by_event.csv,
+severity.Ian 2022.observed_over24_pct,20.2,step5_severity_by_event.csv,
+severity.Ian 2022.predicted_over24_pct,23.3,step5_severity_by_event.csv,
+severity.Beryl 2024.observed_over24_pct,42.9,step5_severity_by_event.csv,
+severity.Beryl 2024.predicted_over24_pct,30.6,step5_severity_by_event.csv,
+severity.Helene 2024.observed_over24_pct,41.2,step5_severity_by_event.csv,
+severity.Helene 2024.predicted_over24_pct,34.5,step5_severity_by_event.csv,
+top_share_over24_pct,90.9,step5_severity_by_event.csv,"top 20% by predicted duration in each hurricane, mean of 9"

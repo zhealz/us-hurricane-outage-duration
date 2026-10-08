@@ -1,0 +1,14 @@
+Part,Indicator,Value,Threshold,Verdict
+Night lights,Rows with at least 10 clear nights before landfall (%),97.2,≥ 80,pass
+Night lights,Rows with at least one clear night within 7 days of landfall (%),95.3,≥ 70,pass
+Night lights,Median normal night-to-night variation (%),13.5,≤ 15,pass
+Night lights,"Spearman correlation of nightly night lights and share with power, affected counties",0.3,≥ 0.4,fail
+Night lights,Median night lights after landfall in counties not affected (normal = 100),101.6,90–110,pass
+Night lights,"Spearman correlation of night lights and share with power, nights not yet restored (share below 95%)",0.58,—,reference
+Night lights,Probability that a night with under half the customers with power is darker than a night in a county not affected,0.91,—,reference
+Flood,Events with flood results,9 / 9,9 / 9,pass
+Flood,Rows with at least 90% of county land covered by radar (%),91.9,≥ 85,pass
+Flood,Median difference from Step 2c in the day of the first image (days),0.0,≤ 1,pass
+Flood,"Spearman correlation of flooded share and 3-day rainfall, counties with a timely image",0.01,≥ 0.2,fail
+Flood,"The same, with cropland left out of the flooded share",0.07,—,reference
+Static,Rows with the share of land close to stream level (%),100.0,≥ 99,pass

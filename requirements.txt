@@ -1,0 +1,13 @@
+# The reported numbers were reproduced exactly with Python 3.12 and these versions.
+numpy==2.0.2
+pandas==2.2.2
+scipy==1.15.3
+scikit-learn==1.6.1
+matplotlib>=3.9
+geopandas>=1.0
+shapely>=2.0
+jupyterlab
+# Steps 1b to 3b only (they also need a Google Earth Engine project)
+earthengine-api
+geemap
+requests

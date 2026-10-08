@@ -1,0 +1,7 @@
+Indicator,Value,Threshold,Verdict
+Usable events,9,≥ 6,pass
+Affected county × event rows in usable events,1086,≥ 500,pass
+Usable events that allow a night-light comparison,6,≥ 3,pass
+Usable events of flood or mixed type / of wind type,3 / 6,≥ 2 / ≥ 2,pass
+Usable events with timely Sentinel-1 images,6,≥ 4,pass
+Spearman correlation of the duration ranking when the denominator is 25% off,0.97,≥ 0.9,pass

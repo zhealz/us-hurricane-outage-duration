@@ -1,0 +1,8 @@
+Part,Indicator,Value,Threshold,Verdict
+Outages,Counties with ≥ 10% of customers out for more than 24 hours,32,≥ 30,pass
+Outages,Longest data collection gap in the event window (hours),6.2,≤ 6,fail
+Flood,Days with Sentinel-1 images within 5 days of landfall,5,≥ 1,pass
+Flood,"Share of focus-county land covered by Sentinel-1 (minimum, %)",100,≥ 90,pass
+Flood,Counties with a flooded share ≥ 1%,4,≥ 10,fail
+Night lights,Focus counties with at least 2 clear nights in the first 7 after landfall,3 / 3,≥ 2,pass
+Night lights,Focus counties where night lights and the true share with power correlate at ≥ 0.5,2 / 3,≥ 2,pass
