@@ -4,7 +4,7 @@
 
 Wind explains most of which counties stay without power longest in a hurricane. A model that has never seen a storm ranks its counties by outage duration with a rank correlation of 0.77; ranking them by gust alone already gives 0.71. With boosted trees, local characteristics add 0.03 and rain 0.01; only the first clears my threshold, and neither does with a linear model. My radar flood measure adds nothing, and satellite foundation-model embeddings can stand in for hand-built local variables but do not add to them.
 
-**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies at Monterey
+**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies
 
 The two-page summary is in [`brief.pdf`](brief.pdf).
 
