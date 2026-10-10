@@ -4,8 +4,6 @@
 
 Wind explains most of which counties stay without power longest in a hurricane. A model that has never seen a storm ranks its counties by outage duration with a rank correlation of 0.77; ranking them by gust alone already gives 0.71. With boosted trees, local characteristics add 0.03 and rain 0.01; only the first clears my threshold, and neither does with a linear model. My radar flood measure adds nothing, and satellite foundation-model embeddings can stand in for hand-built local variables but do not add to them.
 
-**Author:** Zixiao (Heal) Zhuang, M.A. candidate in Environmental Policy and Management, Middlebury Institute of International Studies
-
 The two-page summary is in [`brief.pdf`](brief.pdf).
 
 ![Helene 2024: outage duration by county, observed and predicted](figures/fig1_map.png)
@@ -23,6 +21,10 @@ Which public data explain how long a county stays without power after a hurrican
 - **Strict test, added after the main results were known**: the held-out hurricane's counties are also removed from training. This test trains on less data too (a median of 1,164 pairs instead of 1,638), so a lower score has two possible causes.
 
 The model is explanatory, not a forecast: it uses observed wind and rain.
+
+![Study design](figures/fig0_study_design.png)
+
+*Study design: public data summarized by county (Helene 2024 shown), leave-one-hurricane-out testing, nested variable groups, and an independent night-light check.*
 
 ## Results
 
